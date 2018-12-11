@@ -1,0 +1,22 @@
+﻿@model Playlists
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var song in Model.songs)
+{
+    @song.Song_name @: - @song.Creator_band <br />
+    <div>
+
+    </div>
+}
+    <div>
+        <a asp-controller="Generate" asp-action="Index" asp-route-pname="djfatnutz">Generate recommended playlist here!</a>
+    </div>
+    <div>
+        <a asp-controller="Home" asp-action="Index">Back to beginning!</a>
+    </div>
+

@@ -33,6 +33,12 @@ namespace Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = Configuration["web:client_id"];
+                googleOptions.ClientSecret = Configuration["web:client_secret"];
+            });
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 

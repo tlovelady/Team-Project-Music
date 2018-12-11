@@ -22,5 +22,9 @@ namespace Web.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Web.Models.Playlists> Playlists { get; set; }
+
+        public DbSet<Web.Models.Song> Song { get; set; }
     }
 }
